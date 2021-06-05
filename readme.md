@@ -1,6 +1,7 @@
 user routes:
-
+<h1>
 1. POST api/users
+</h1>
    params: request.body = {userId, lisenceCode}
    function: register new clients (admin privlage)
    visibility: admin
