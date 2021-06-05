@@ -1,12 +1,16 @@
-user routes:
 <h1>
-1. POST api/users
+user routes:
 </h1>
-   params: request.body = {userId, lisenceCode}
-   function: register new clients (admin privlage)
-   visibility: admin
-   response: user object but user not registred (if user id or liscence is unique)
-   error: User Id or liscence code already exists (if not unique)
+<h3>
+1. POST api/users
+</h3>
+<ul>
+   <li> params: request.body = {userId, lisenceCode} </li>
+   <li> function: register new clients (admin privlage) </li>
+   <li> visibility: admin </li>
+   <li> response: user object but user not registred (if user id or liscence is unique) </li>
+   <li> error: User Id or liscence code already exists (if not unique) </li>
+</ul>
 2. POST /api/users/liscence
    params: request.body = {userId, lisenceCode}
    function: before user registers, checks if userid and liscencecode is correct
