@@ -43,11 +43,13 @@ user routes:
 </ul>
 <h3>
 5. POST /api/users/login
-   </h3>
-   <ul>
+</h3>
+<ul>
    <li> params: request.body = {userId, password} </li>
    <li> function: authenticate users and give token </li>
    <li> visibility: public </li>
    <li> response: user object and token (if correct combo) </li>
    <li> error: Invalid username or password (if incorrect combo) </li>
-   </ul>
+</ul>
+
+<h6> to access any private route, just send auth token in header as Bearer <token> </h6>
