@@ -52,4 +52,4 @@ user routes:
    <li> error: Invalid username or password (if incorrect combo) </li>
 </ul>
 
-<h6> to access any private route, just send auth token in header as Bearer <token> </h6>
+<h6> to access any private route, just send auth token in header as Bearer /*token*/ </h6>
