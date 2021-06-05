@@ -7,7 +7,7 @@ user routes:
 <ul>
    <li> params: request.body = {userId, lisenceCode} </li>
    <li> function: register new clients (admin privlage) </li>
-   <li> visibility: admin </li>
+   <li> visibility: admin (for now, it is public just for testing purposes)</li>
    <li> response: user object but user not registred (if user id or liscence is unique) </li>
    <li> error: User Id or liscence code already exists (if not unique) </li>
 </ul>
