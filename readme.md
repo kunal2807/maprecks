@@ -53,3 +53,11 @@ user routes:
 </ul>
 
 <h6> to access any private route, just send auth token in header as Bearer /*token*/ </h6>
+
+<h1>
+   face routes
+</h1>
+
+<h1>
+   car routes
+</h1>
