@@ -6,6 +6,7 @@ import colors from 'colors'
 import connectDB from './config/db.js'
 import userRoutes from './routes/userRoutes.js'
 import faceRoutes from './routes/faceRoutes.js'
+import carRoutes from './routes/carRoutes.js'
 
 dotenv.config()
 
@@ -16,6 +17,7 @@ const app = express()
 app.use(express.json())
 app.use('/api/users', userRoutes)
 app.use('/api/faces', faceRoutes)
+app.use('/api/cars', carRoutes)
 
 app.get('/', (req, res) => {
   res.send('API is running...')

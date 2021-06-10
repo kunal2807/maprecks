@@ -96,7 +96,48 @@ user routes:
    <li> function: add a person </li>
    <li> visibility: private </li>
    <li> response: face object </li>
+</ul>
 
 <h1>
    car routes
 </h1>
+
+<h3>
+1. GET /api/cars/myfaces
+</h3>
+<ul>
+   <li> params: - </li>
+   <li> function: get all cars of the user </li>
+   <li> visibility: private </li>
+   <li> response: array of cars objects </li>
+   <li> error: none </li>
+</ul>
+<h3>
+2. Get /api/cars/:id
+</h3>
+<ul>
+   <li> params: - </li>
+   <li> function: get all detail of particular car </li>
+   <li> visibility: private </li>
+   <li> response: car object </li>
+   <li> error: face not found </li>
+</ul>
+<h3>
+3. DELETE /api/cars/:id
+</h3>
+<ul>
+   <li> params: - </li>
+   <li> function: remove car </li>
+   <li> visibility: private </li>
+   <li> response: car object </li>
+   <li> error: car not found </li>
+</ul>
+<h3>
+4. POST /api/cars
+</h3>
+<ul>
+   <li> params: licesnce number </li>
+   <li> function: add a car </li>
+   <li> visibility: private </li>
+   <li> response: car object </li>
+</ul>
