@@ -29,8 +29,7 @@ const userSchema = mongoose.Schema(
       type: String,
     },
     idProof: {
-      data: Buffer,
-      contentType: String,
+      type: String, //path in cloud
     },
     contactNumber: {
       type: String,

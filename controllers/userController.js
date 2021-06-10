@@ -4,7 +4,7 @@ import User from '../models/userModel.js'
 
 // @desc    Register Brand new user by admins
 // @route   POST /api/users
-// @access  Private (admins only)
+// @access  Private admins
 export const createNewUser = asyncHandler(async (req, res) => {
   const { userId, licenseCode } = req.body
 
@@ -65,7 +65,7 @@ export const authNewUser = asyncHandler(async (req, res) => {
 // @route   PUT /api/users/profile
 // @access  Private
 export const updateUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.body.user._id)
+  const user = await User.findById(req.user._id)
   const { name, password, idProof, contactNumber, address } = req.body
 
   if (user) {
