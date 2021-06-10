@@ -52,14 +52,6 @@ user routes:
    <li> error: Invalid username or password (if incorrect combo) </li>
 </ul>
 
-<ul>
-   <li> params: request.body = {userId, password} </li>
-   <li> function: authenticate users and give token </li>
-   <li> visibility: public </li>
-   <li> response: user object and token (if correct combo) </li>
-   <li> error: Invalid username or password (if incorrect combo) </li>
-</ul>
-
 <h6> to access any private route, just send auth token in header as Bearer /*token*/ </h6>
 
 <h1>
