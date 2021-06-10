@@ -43,38 +43,15 @@ user routes:
 </ul>
 <h3>
 5. POST /api/users/login
-   params: request.body = {userId, password}
-   function: authenticate users and give token
-   visibility: public
-   response: user object and token (if correct combo)
-   error: Invalid username or password (if incorrect combo)
-
-face routes:
-
-1. GET /api/faces/myfaces
-   params: -
-   function: get all faces of the user
-   visibility: private
-   response: array of face objects
-   error: none
-2. Get /api/faces/:id
-   params: -
-   function: get all detail of particular person
-   visibility: private
-   response: face object
-   error: face not found
-3. DELETE /api/faces/:id
-   params: -
-   function: remove person
-   visibility: private
-   response: face object
-   error: face not found
-4. POST /api/faces
-params: images, video, name, age, gender
-function: add a person
-visibility: private
-response: face object
 </h3>
+<ul>
+   <li> params: request.body = {userId, password} </li>
+   <li> function: authenticate users and give token </li>
+   <li> visibility: public </li>
+   <li> response: user object and token (if correct combo) </li>
+   <li> error: Invalid username or password (if incorrect combo) </li>
+</ul>
+
 <ul>
    <li> params: request.body = {userId, password} </li>
    <li> function: authenticate users and give token </li>
@@ -88,6 +65,45 @@ response: face object
 <h1>
    face routes
 </h1>
+
+<h3>
+1. GET /api/faces/myfaces
+</h3>
+<ul>
+   <li> params: - </li>
+   <li> function: get all faces of the user </li>
+   <li> visibility: private </li>
+   <li> response: array of face objects </li>
+   <li> error: none </li>
+</ul>
+<h3>
+2. Get /api/faces/:id
+</h3>
+<ul>
+   <li> params: - </li>
+   <li> function: get all detail of particular person </li>
+   <li> visibility: private </li>
+   <li> response: face object </li>
+   <li> error: face not found </li>
+</ul>
+<h3>
+3. DELETE /api/faces/:id
+</h3>
+<ul>
+   <li> params: - </li>
+   <li> function: remove person </li>
+   <li> visibility: private </li>
+   <li> response: face object </li>
+   <li> error: face not found </li>
+</ul>
+<h3>
+4. POST /api/faces
+</h3>
+<ul>
+   <li> params: images, video, name, age, gender </li>
+   <li> function: add a person </li>
+   <li> visibility: private </li>
+   <li> response: face object </li>
 
 <h1>
    car routes
