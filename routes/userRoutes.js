@@ -1,7 +1,7 @@
 import express from 'express'
 import {
   createNewUser,
-  authNewUser,
+  verifyNewUser,
   updateUserProfile,
   authUser,
   createUserProfile,
@@ -10,7 +10,7 @@ import { protect } from '../middleware/authMiddleware.js'
 const router = express.Router()
 
 router.route('/').post(createNewUser)
-router.route('/license').post(authNewUser)
+router.route('/verify').post(verifyNewUser)
 router.route('/login').post(authUser)
 router.route('/create').put(createUserProfile)
 router.route('/profile').put(protect, updateUserProfile)

@@ -15,7 +15,7 @@ user routes:
    <li> error: User Id or liscence code already exists (if not unique) </li>
 </ul>
 <h3>
-2. POST /api/users/liscence
+2. POST /api/users/verify
 </h3>
 <ul>
    <li> params: request.body = {userId, lisenceCode} </li>
@@ -38,7 +38,7 @@ user routes:
 4. PUT /api/users/create
 </h3>
 <ul>
-   <li> params: request.body = user object (already authed from liscence) </li>
+   <li> params: request.body = _id (user._id from prev step ) </li>
    <li> function: create user profile and give auth token </li>
    <li> visibility: semi-public </li>
    <li> response: updated user object </li>
