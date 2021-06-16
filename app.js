@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
   )
-  res.json({ data: [1, 2, 3, 4] })
+  // res.json({ data: [1, 2, 3, 4] })
 })
 app.use(express.json())
 app.use('/api/users', userRoutes)
