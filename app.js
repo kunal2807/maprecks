@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 import express from 'express'
+import cors from 'cors'
 import path from 'path'
 import colors from 'colors'
 
@@ -13,18 +14,10 @@ dotenv.config()
 connectDB()
 
 const app = express()
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept'
-  )
-  // res.json({ data: [1, 2, 3, 4] })
-})
 app.use(express.json())
-app.use('/api/users', userRoutes)
-app.use('/api/faces', faceRoutes)
-app.use('/api/cars', carRoutes)
+app.use('/api/users', cors(), userRoutes)
+app.use('/api/faces', cors(), faceRoutes)
+app.use('/api/cars', cors(), carRoutes)
 
 app.get('/', (req, res) => {
   res.send('API is running...')
