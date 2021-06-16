@@ -15,9 +15,10 @@ connectDB()
 
 const app = express()
 app.use(express.json())
-app.use('/api/users', cors(), userRoutes)
-app.use('/api/faces', cors(), faceRoutes)
-app.use('/api/cars', cors(), carRoutes)
+app.options('*', cors())
+app.use('/api/users', userRoutes)
+app.use('/api/faces', faceRoutes)
+app.use('/api/cars', carRoutes)
 
 app.get('/', (req, res) => {
   res.send('API is running...')
