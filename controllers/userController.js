@@ -109,10 +109,10 @@ export const createUserProfile = asyncHandler(async (req, res) => {
     throw new Error('User already registered')
   }
 
-  const { name, password, idProof, contactNumber, address } = req.body
+  const { name, password, idProof, contactNumber, email } = req.body
 
   //include idProof image later on
-  if (!name || !password || !contactNumber || !address) {
+  if (!name || !password || !contactNumber || !email) {
     res.status(404)
     throw new Error('all fields are required for new user')
   }
@@ -121,7 +121,7 @@ export const createUserProfile = asyncHandler(async (req, res) => {
     const token = generateToken(user._id)
     user.name = name || user.name
     user.idProof = idProof || user.idProof
-    user.address = address || user.address
+    user.email = email || user.email
     user.registered = true
     if (password) {
       user.password = password
@@ -140,7 +140,7 @@ export const createUserProfile = asyncHandler(async (req, res) => {
       admin: updatedUser.isAdmin,
       idProof: updatedUser.idProof,
       contactNumber: updatedUser.contactNumber,
-      address: updatedUser.address,
+      email: updatedUser.email,
 
       token,
     })

@@ -34,7 +34,7 @@ const userSchema = mongoose.Schema(
     contactNumber: {
       type: String,
     },
-    address: {
+    email: {
       type: String,
     },
   },
