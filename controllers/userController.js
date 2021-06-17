@@ -35,7 +35,7 @@ export const createNewUser = asyncHandler(async (req, res) => {
 })
 
 // @desc    Auth userId & licenseCode
-// @route   POST /api/users/license
+// @route   POST /api/users/verify
 // @access  Public
 export const verifyNewUser = asyncHandler(async (req, res) => {
   const { userId, licenseCode } = req.body
@@ -104,13 +104,6 @@ export const updateUserProfile = asyncHandler(async (req, res) => {
 export const createUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.body._id)
   console.log(user)
-  if (
-    user.userId !== req.body.user.userId ||
-    user.licenseCode !== req.body.user.licenseCode
-  ) {
-    res.status(401)
-    throw new Error('User id or licese code invalid')
-  }
   if (user && user.registered) {
     res.status(401)
     throw new Error('User already registered')
