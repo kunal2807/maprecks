@@ -14,9 +14,8 @@ dotenv.config()
 connectDB()
 
 const app = express()
-app.use(express.json())
-// app.options('*', cors())
 app.use(cors())
+app.use(express.json())
 app.use('/api/users', userRoutes)
 app.use('/api/faces', faceRoutes)
 app.use('/api/cars', carRoutes)
@@ -24,6 +23,8 @@ app.use('/api/cars', carRoutes)
 app.get('/', (req, res) => {
   res.send('API is running...')
 })
+
+// app.get('/', (req, ))
 
 const PORT = process.env.PORT || 8000
 const ENV = process.env.NODE_ENV || 'no enviroment'
