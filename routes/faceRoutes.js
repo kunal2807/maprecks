@@ -12,8 +12,7 @@ const router = express.Router()
 router.route('/').post(
   protect,
   uploadImg.fields([
-    { name: 'name', maxCount: 1 },
-    { name: 'images', maxCount: 6 },
+    { name: 'images', maxCount: 8 },
     { name: 'video', maxCount: 1 },
   ]),
   createFace

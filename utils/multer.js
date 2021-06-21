@@ -3,7 +3,7 @@ import multer from 'multer'
 const storageImg = multer.diskStorage({
   destination: function (req, res, cb) {
     console.log('===>lalala', req.body)
-    let dir = `public/${req.user._id}`
+    let dir = `public`
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir)
     }
