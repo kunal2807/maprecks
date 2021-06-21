@@ -37,6 +37,11 @@ const userSchema = mongoose.Schema(
     email: {
       type: String,
     },
+    // to be done
+    // vid: {
+    //   type: String,
+    //   required: true
+    // }
   },
   {
     timestamps: true,

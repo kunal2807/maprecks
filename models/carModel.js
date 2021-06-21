@@ -6,6 +6,10 @@ const carSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    owner: {
+      type: String,
+      required: true,
+    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,

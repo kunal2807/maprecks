@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 import express from 'express'
 import cors from 'cors'
+import bodyParser from 'body-parser'
 import path from 'path'
 import colors from 'colors'
 
@@ -15,7 +16,14 @@ connectDB()
 
 const app = express()
 app.use(cors())
-app.use(express.json())
+// for parsing application/json
+app.use(bodyParser.json())
+
+// for parsing application/xwww-
+app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use(express.static('public'))
+
 app.use('/api/users', userRoutes)
 app.use('/api/faces', faceRoutes)
 app.use('/api/cars', carRoutes)

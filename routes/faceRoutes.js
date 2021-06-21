@@ -1,4 +1,5 @@
 import express from 'express'
+import { uploadImg } from '../utils/multer.js'
 import {
   getMyFaces,
   getFaceById,
@@ -8,7 +9,15 @@ import {
 import { protect } from '../middleware/authMiddleware.js'
 const router = express.Router()
 
-router.route('/').post(protect, createFace)
+router.route('/').post(
+  protect,
+  uploadImg.fields([
+    { name: 'name', maxCount: 1 },
+    { name: 'images', maxCount: 6 },
+    { name: 'video', maxCount: 1 },
+  ]),
+  createFace
+)
 router.route('/myFaces').get(protect, getMyFaces)
 router.route('/:id').get(protect, getFaceById).delete(protect, deleteFace)
 

@@ -1,6 +1,8 @@
 import asyncHandler from 'express-async-handler'
+import fs from 'fs'
 import Face from '../models/faceModel.js'
 import { request } from 'express'
+import { uploadImg } from '../utils/multer.js'
 
 // @desc    Get logged in user's registered faces
 // @route   GET /api/faces/myfaces
@@ -31,6 +33,10 @@ export const deleteFace = asyncHandler(async (req, res) => {
   const face = await Face.findById(req.params.id)
 
   if (face) {
+    face.images.forEach(function (image) {
+      fs.unlinkSync(image)
+    })
+    fs.unlinkSync(face.video)
     await face.remove()
     res.json({ message: 'person succesfully deleted' })
   } else {
@@ -43,7 +49,18 @@ export const deleteFace = asyncHandler(async (req, res) => {
 // @route   POST /api/faces
 // @access  Private
 export const createFace = asyncHandler(async (req, res) => {
-  const { images, video, name, age, gender } = req.body
+  console.log(req.files)
+  const { name, age, gender } = req.body
+
+  console.log(req.body)
+
+  let images = []
+  req.files.images.forEach(function (image) {
+    images.push(image.path)
+  })
+
+  const video = req.files.video[0].path
+
   const face = new Face({
     images,
     video,

@@ -4,7 +4,7 @@ const faceSchema = mongoose.Schema(
   {
     images: [
       {
-        image: { type: String }, //path
+        type: String,
       },
     ],
     video: {
