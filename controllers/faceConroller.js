@@ -49,10 +49,10 @@ export const deleteFace = asyncHandler(async (req, res) => {
 // @route   POST /api/faces
 // @access  Private
 export const createFace = asyncHandler(async (req, res) => {
-  console.log(req.files)
+  console.log('files by multer: ', req.files)
   const { name, age, gender } = req.body
 
-  console.log(req.body)
+  console.log('dosy of request: ', req.body)
 
   let images = []
   req.files.images.forEach(function (image) {
