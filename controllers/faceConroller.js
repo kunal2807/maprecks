@@ -49,15 +49,16 @@ export const deleteFace = asyncHandler(async (req, res) => {
 // @route   POST /api/faces
 // @access  Private
 export const createFace = asyncHandler(async (req, res) => {
-  // console.log('files by multer: ', req.files)
+  console.log('enter create face')
   const { name, age, gender } = req.body
-  // console.log('body of request: ', req.body)
+  console.log('body parsed')
 
   let images = []
   req.files.images.forEach(function (image) {
     images.push(image.path)
   })
 
+  console.log('images array: ', images)
   const video = req.files.video[0].path
 
   const face = new Face({
@@ -70,5 +71,7 @@ export const createFace = asyncHandler(async (req, res) => {
   })
 
   const createdFace = await face.save()
+  console.log('face created')
+  console.log('sending 201 response')
   res.status(201).json(createdFace)
 })
